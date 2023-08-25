@@ -1,0 +1,85 @@
+.registration-dialog {
+    width: 800px;
+    height: 400px;
+    display: flex;
+}
+
+
+@media (min-width: 576px) {
+    .registration-dialog {
+        width: 800px;
+        height: 400px;
+    }
+
+    mat-form-field {
+        max-width: 800px;
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+    .registration-dialog {
+        width: 800px;
+        height: 400px;
+    }
+
+    mat-form-field {
+        max-width: 800px;
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .registration-dialog {
+        width: 800px;
+        height: 400px;
+    }
+
+    mat-form-field {
+        max-width: 800px;
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .registration-dialog {
+        width: 800px;
+        height: 400px;
+    }
+
+    mat-form-field {
+        max-width: 800px;
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .registration-dialog {
+        width: 440px;
+        height: 730px;
+        display: flex;
+        align-items: center;
+    }
+
+    .registration-dialog h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .registration-dialog img {
+        margin: 0 auto 20px auto;
+        display: block;
+    }
+
+    .registration-button {
+        width: 300px;
+        margin: 20px auto;
+        display: block;
+    }
+
+    mat-form-field {
+        width: 440px;
+        margin: 0 auto;
+    }
+}
+

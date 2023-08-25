@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Lato SemiBold';
+  src: url('assets/font/Lato SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lato Light';
+  src: url('assets/font/Lato Light.woff2') format('woff2');
+}

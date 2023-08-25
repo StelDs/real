@@ -1,0 +1,13 @@
+# IDE
+.angular
+assistant-front.iml
+
+# Angular files
+dist
+node_modules
+
+# Git
+.gitignore
+
+# MD
+*.md

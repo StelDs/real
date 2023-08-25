@@ -1,0 +1,111 @@
+:root {
+  /*default colors*/
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #808080;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+
+:root,
+[data-bs-theme=light] {
+
+
+  /*Основные цвета*/
+  --bs-color-primary: #5D83B2;
+  --bs-color-primary-2: #3766A0;
+
+  /*Скролл бар*/
+  --bs-scroll-bar-color: var(--bs-color-primary);
+  --bs-scroll-bar-border: 1px solid rgba(128,128,128,.1);
+  --bs-scroll-bar-background-color: rgba(128,128,128,.1);
+
+  /*Input*/
+  --bs-input-text-color: var(--bs-black);
+  --bs-input-text-color-focus: var(--bs-black);
+  --bs-input-color: var(--bs-gray);
+  --bs-input-color-hover: var(--bs-color-primary);
+  --bs-input-color-focus: var(--bs-color-primary);
+  --bs-input-label-color: var(--bs-gray);
+  --bs-input-label-color-focus: var(--bs-color-primary);
+  --bs-input-icon-color: var(--bs-gray);
+  --bs-input-icon-color-focus: var(--bs-color-primary);
+
+  /*Buttons*/
+  /*Button Primary*/
+  --bs-button-text-color: var(--bs-white);
+  --bs-button-background-color: var(--bs-color-primary);
+  /*Button Secondary*/
+  --bs-button-secondary-text-color: var(--bs-white);
+  --bs-button-secondary-background-color: var(--bs-gray);
+  /*Button Tertiary*/
+  --bs-button-tertiary-text-color: var(--bs-black);
+  --bs-button-tertiary-background-color: var(--bs-white);
+  /*Button Map*/
+  --bs-button-map-icon-color: var(--bs-color-primary);
+  --bs-button-map-text-color: var(--bs-black);
+  --bs-button-map-background-color: var(--bs-white);
+
+  /*Header*/
+  --bs-header-bacground-color: var(--bs-white);
+  --bs-header-link-color: var(--bs-gray);
+  /*Button GPS + SMART*/
+  --bs-button-gps-text-color: var(--bs-white);
+  --bs-button-gps-background-color: var(--bs-color-primary);
+}
+
+[data-bs-theme=dark] {
+  /*Основные цвета*/
+  --bs-color-primary: #5D83B2;
+  --bs-color-primary-2: #3766A0;
+
+  /*Скролл бар*/
+  --bs-scroll-bar-color: var(--bs-color-primary);
+  --bs-scroll-bar-border: 1px solid rgba(128,128,128,.1);
+  --bs-scroll-bar-background-color: rgba(128,128,128,.1);
+
+  /*Input*/
+  --bs-input-text-color: var(--bs-black);
+  --bs-input-text-color-focus: var(--bs-black);
+  --bs-input-color: var(--bs-gray);
+  --bs-input-color-hover: var(--bs-color-primary);
+  --bs-input-color-focus: var(--bs-color-primary);
+  --bs-input-label-color: var(--bs-gray);
+  --bs-input-label-color-focus: var(--bs-color-primary);
+  --bs-input-icon-color: var(--bs-gray);
+  --bs-input-icon-color-focus: var(--bs-color-primary);
+
+  /*Button Primary*/
+  --bs-button-text-color: var(--bs-white);
+  --bs-button-background-color: var(--bs-color-primary);
+
+  /*Цвет заднего фона шапки*/
+  --bs-header-bacground-color: var(--bs-white);
+  --bs-header-text-color: ;
+}

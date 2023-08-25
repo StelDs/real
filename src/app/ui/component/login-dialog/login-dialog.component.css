@@ -1,0 +1,85 @@
+.login-dialog {
+  width: 800px;
+  height: 400px;
+  display: flex;
+}
+
+
+@media (min-width: 576px) {
+  .login-dialog {
+    width: 800px;
+    height: 400px;
+  }
+
+  mat-form-field {
+    max-width: 800px;
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .login-dialog {
+    width: 800px;
+    height: 400px;
+  }
+
+  mat-form-field {
+    max-width: 800px;
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 992px) {
+  .login-dialog {
+    width: 800px;
+    height: 400px;
+  }
+
+  mat-form-field {
+    max-width: 800px;
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-dialog {
+    width: 800px;
+    height: 400px;
+  }
+
+  mat-form-field {
+    max-width: 800px;
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .login-dialog {
+    width: 420px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+  }
+
+  .login-dialog h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .login-dialog img {
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+
+  .login-button {
+    width: 300px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  mat-form-field {
+    width: 420px;
+    margin: 0 auto;
+  }
+}
+
