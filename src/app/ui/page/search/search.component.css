@@ -1,0 +1,27 @@
+main {
+  width: 100%;
+  height: max-content;
+}
+
+.search-block {
+  background-image: url("/assets/img/search-background.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.search-block h1 {
+  color: #FFF;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.66);
+  font-family: 'Lato SemiBold', serif;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  padding-top: 120px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+app-search-apartment-card {
+
+}
+

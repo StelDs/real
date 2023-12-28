@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "font.css";
 
 *,
 *::before,
@@ -11978,6 +11979,24 @@ mat-form-field.mat-form-field {
   color: var(--bs-header-link-color);
 }
 
+.header-menu-button {
+  color: var(--bs-header-menu-button-color);
+}
+
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: unset;
+}
+
+.mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
+  background-color: var(--bs-selection-checkbox-checked-color);
+}
+
+.mat-checkbox-ripple .mat-ripple-element,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color:var(--bs-selection-checkbox-checked-color) !important;
+}
+
 /*--------------------------SCROLL--------------------------*/
 *::-webkit-scrollbar {
   width: 4px;
@@ -12641,5 +12660,63 @@ mat-form-field.mat-form-field {
 /*  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");*/
 /*}*/
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.error-snackbar {
+  background: var(--bs-error-snackbar-color);
+  color: var(--bs-error-snackbar-text-color);
+}
+
+.error-snackbar button {
+  background-color: var(--bs-error-snackbar-color);
+  color: var(--bs-error-snackbar-text-color) !important;
+  border: none;
+}
+
+.success-snackbar {
+  background: var(--bs-success-snackbar-color);
+  color: var(--bs-success-snackbar-text-color);
+}
+
+.success-snackbar button {
+  background-color: var(--bs-success-snackbar-color);
+  color: var(--bs-success-snackbar-text-color) !important;
+  border: none;
+}
+
+.primary-snackbar {
+  background: var(--bs-primary-snackbar-color);
+  color: var(--bs-primary-snackbar-text-color);
+}
+
+.primary-snackbar button {
+  background-color: var(--bs-primary-snackbar-color);
+  color: var(--bs-primary-snackbar-text-color) !important;
+  border: none;
+}
+
+.menu-block {
+  background-color: white;
+  width: 100%;
+  min-height: 1000px;
+  height: 100%;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.hr-shadow {
+  padding: 0;
+  height: 10px;
+  border: none;
+  border-top: 1px solid #333;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bs-color-background-primary) !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato Light', serif;
+}

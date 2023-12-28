@@ -1,137 +1,269 @@
 <main>
-    <div class="search-block">
-        <div style="display: block; margin: 0 auto">
-            <h1>Недвижимость в Воронеже</h1><br>
-            <div class="">
+  <div class="search-block">
+    <div style="display: block; margin: 0 auto">
+      <h1>Недвижимость в Воронеже</h1><br>
+      <div class="">
 
-            </div>
-            <div class="btn-group">
-                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <button mat-button type="button" class="btn btn-group-btn">
-                            Купить
-                            <mat-icon>keyboard_arrow_down</mat-icon>
-                        </button>
-                        <button mat-button type="button" class="btn btn-group-btn">
-                            Квартира в...
-                            <mat-icon>keyboard_arrow_down</mat-icon>
-                        </button>
-                        <button mat-button type="button" class="btn btn-group-btn">
-                            Комнат
-                            <mat-icon>keyboard_arrow_down</mat-icon>
-                        </button>
-                        <button mat-button type="button" class="btn btn-group-btn">
-                            Цена
-                            <mat-icon>keyboard_arrow_down</mat-icon>
-                        </button>
-                        <input class="btn inpt btn-group-inpt" placeholder="Введите город, адрес, район, метро, ЖК">
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="align-right">
-                <button class="mat-raised-button-map-color" mat-button>
-                    <mat-icon>place icon</mat-icon>
-                    Показать на карте
-                </button>
-                <button class="mat-raised-button-tertiary-color" mat-button>Найти</button>
-                <button class="mat-raised-button-primary-color" mat-button>Smart-подбор</button>
-            </div>
+      </div>
+      <div class="btn-group">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button cdkOverlayOrigin mat-button type="button" class="btn btn-group-btn"
+                    (click)="buyOverlayIsOpen = !buyOverlayIsOpen"
+                    #buyOverlayIsOpenTrigger="cdkOverlayOrigin">
+              Купить
+              <mat-icon *ngIf="!buyOverlayIsOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="buyOverlayIsOpen">keyboard_arrow_up</mat-icon>
+            </button>
+
+            <ng-template cdkConnectedOverlay
+                         [cdkConnectedOverlayOrigin]="buyOverlayIsOpenTrigger"
+                         [cdkConnectedOverlayOpen]="buyOverlayIsOpen"
+                         (overlayOutsideClick)="setClose()"
+                         (overlayKeydown)="setCloseKeydown($event)">
+              <div class="overlay-background">
+                <section [formGroup]="bayOverlayGroup">
+                  <p>
+                    <mat-checkbox formControlName="buy">Купить</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="takeOff">Снять</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="dailyRent">Посуточно</mat-checkbox>
+                  </p>
+                </section>
+              </div>
+            </ng-template>
+
+            <button cdkOverlayOrigin mat-button type="button" class="btn btn-group-btn"
+                    (click)="districtsOverlayIsOpen = !districtsOverlayIsOpen"
+                    #districtsOverlayIsOpenTrigger="cdkOverlayOrigin">
+              Квартира в...
+              <mat-icon *ngIf="!districtsOverlayIsOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="districtsOverlayIsOpen">keyboard_arrow_up</mat-icon>
+            </button>
+            <ng-template cdkConnectedOverlay
+                         [cdkConnectedOverlayOrigin]="districtsOverlayIsOpenTrigger"
+                         [cdkConnectedOverlayOpen]="districtsOverlayIsOpen"
+                         (overlayOutsideClick)="setClose()"
+                         (overlayKeydown)="setCloseKeydown($event)">
+              <div class="overlay-background">
+                <section [formGroup]="districtsOverlayGroup">
+                  <p>
+                    <mat-checkbox formControlName="newBuilding">Новостройке</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="secondary">Вторичке</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="house">Дом</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="countryHouse">Дача</mat-checkbox>
+                  </p>
+                </section>
+              </div>
+            </ng-template>
+            <button cdkOverlayOrigin mat-button type="button" class="btn btn-group-btn"
+                    (click)="roomsOverlayIsOpen = !roomsOverlayIsOpen"
+                    #roomsOverlayIsOpenTrigger="cdkOverlayOrigin">
+              Комнат
+              <mat-icon *ngIf="!roomsOverlayIsOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="roomsOverlayIsOpen">keyboard_arrow_up</mat-icon>
+            </button>
+            <ng-template cdkConnectedOverlay
+                         [cdkConnectedOverlayOrigin]="roomsOverlayIsOpenTrigger"
+                         [cdkConnectedOverlayOpen]="roomsOverlayIsOpen"
+                         (overlayOutsideClick)="setClose()"
+                         (overlayKeydown)="setCloseKeydown($event)">
+              <div class="overlay-background">
+                <section [formGroup]="roomsOverlayGroup">
+                  <p>
+                    <mat-checkbox formControlName="atelier">Студия</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="room_1">1 комната</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="room_2">2 комнаты</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="room_3">3 комнаты</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="room_4">4 комнаты</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="room_4_plus">4+ комнат</mat-checkbox>
+                  </p>
+                </section>
+              </div>
+            </ng-template>
+            <button cdkOverlayOrigin mat-button type="button" class="btn btn-group-btn"
+                    (click)="priceOverlayIsOpen = !priceOverlayIsOpen"
+                    #priceOverlayIsOpenTrigger="cdkOverlayOrigin">
+              Цена
+              <mat-icon *ngIf="!priceOverlayIsOpen">keyboard_arrow_down</mat-icon>
+              <mat-icon *ngIf="priceOverlayIsOpen">keyboard_arrow_up</mat-icon>
+            </button>
+            <ng-template cdkConnectedOverlay
+                         [cdkConnectedOverlayOrigin]="priceOverlayIsOpenTrigger"
+                         [cdkConnectedOverlayOpen]="priceOverlayIsOpen"
+                         (overlayOutsideClick)="setClose()"
+                         (overlayKeydown)="setCloseKeydown($event)">
+              <div class="overlay-background">
+                <section [formGroup]="priceOverlayGroup">
+                  <div>
+                    <mat-form-field appearance="outline">
+                      <mat-label>Минимальная цена</mat-label>
+                      <input matInput name="minPrice" formControlName="min" type="number" placeholder="0"
+                             autocomplete="off">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                      <mat-label>Максимальная цена</mat-label>
+                      <input matInput name="maxPrice" formControlName="max" type="number" placeholder="0"
+                             autocomplete="off">
+                    </mat-form-field>
+                  </div>
+                </section>
+              </div>
+            </ng-template>
+            <input class="btn inpt btn-group-inpt" placeholder="Введите город, адрес, район, метро, ЖК">
+          </div>
         </div>
+      </div>
+      <br>
+      <div class="align-right">
+        <button class="mat-raised-button-map-color" mat-button>
+          <mat-icon>place icon</mat-icon>
+          Показать на карте
+        </button>
+        <button class="mat-raised-button-tertiary-color" routerLink="search" mat-button>Найти</button>
+        <button class="mat-raised-button-primary-color" routerLink="smart-search" mat-button>Smart-подбор</button>
+      </div>
     </div>
-    <div class="info-block">
-        <h1>Полезная информация</h1>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>Продажа квартир</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <table>
-                                <tbody>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 170px 0 15px">1-комнатные:</td>
-                                    <td style="float: right"><b>3764</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 170px 0 15px">2-комнатные:</td>
-                                    <td style="float: right"><b>2761</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 170px 0 15px">3-комнатные:</td>
-                                    <td style="float: right"><b>1345</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 170px 0 15px">Студии:</td>
-                                    <td style="float: right"><b>567</b></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <div class="col">
-                    <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>Аренда квартир</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <table>
-                                <tbody>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 190px 0 15px">1-комнатные:</td>
-                                    <td style="float: right"><b>748</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 190px 0 15px">2-комнатные:</td>
-                                    <td style="float: right"><b>488</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 190px 0 15px">3-комнатные:</td>
-                                    <td style="float: right"><b>293</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 190px 0 15px">Студии:</td>
-                                    <td style="float: right"><b>134</b></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <div class="col">
-                    <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>Загородная недвижимость</mat-card-title>
-                        </mat-card-header>
-                        <mat-card-content>
-                            <table>
-                                <tbody>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 150px 0 15px">Дома:</td>
-                                    <td style="float: right"><b>3785</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 150px 0 15px">Таунхаусы:</td>
-                                    <td style="float: right"><b>326</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 150px 0 15px">Части дома:</td>
-                                    <td style="float: right"><b>677</b></td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="float: left; margin: 0 150px 0 15px">Земельные участки:</td>
-                                    <td style="float: right"><b>187</b></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
+  </div>
+  <div class="search-block-2">
+    <div style="display: block; margin: 0 auto">
+      <h1>Недвижимость</h1><br>
+      <div>
+        <div class="btn-group">
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <input class="btn inpt btn-group-inpt" placeholder="Введите город, адрес, район, метро, ЖК">
             </div>
+            <button mat-button type="button" routerLink="search"
+                    class="mat-raised-button-tertiary-color btn-group-btn-search">
+              Найти
+            </button>
+          </div>
         </div>
+        <br>
+        <div class="align-right">
+          <button class="mat-raised-button-map-color button-map-small" mat-button>
+            <mat-icon>place icon</mat-icon>
+            Показать на карте
+          </button>
+          <button class="mat-raised-button-primary-color" routerLink="smart-search" mat-button>Smart-подбор</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="info-block">
+    <h1>Полезная информация</h1>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Продажа квартир</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <table>
+                <tbody>
+                <tr class="info">
+                  <td style="float: left; margin: 0 170px 0 15px">1-комнатные:</td>
+                  <td style="float: right"><b>3764</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 170px 0 15px">2-комнатные:</td>
+                  <td style="float: right"><b>2761</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 170px 0 15px">3-комнатные:</td>
+                  <td style="float: right"><b>1345</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 170px 0 15px">Студии:</td>
+                  <td style="float: right"><b>567</b></td>
+                </tr>
+                </tbody>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Аренда квартир</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <table>
+                <tbody>
+                <tr class="info">
+                  <td style="float: left; margin: 0 190px 0 15px">1-комнатные:</td>
+                  <td style="float: right"><b>748</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 190px 0 15px">2-комнатные:</td>
+                  <td style="float: right"><b>488</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 190px 0 15px">3-комнатные:</td>
+                  <td style="float: right"><b>293</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 190px 0 15px">Студии:</td>
+                  <td style="float: right"><b>134</b></td>
+                </tr>
+                </tbody>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Загородная недвижимость</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <table>
+                <tbody>
+                <tr class="info">
+                  <td style="float: left; margin: 0 150px 0 15px">Дома:</td>
+                  <td style="float: right"><b>3785</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 150px 0 15px">Таунхаусы:</td>
+                  <td style="float: right"><b>326</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 150px 0 15px">Части дома:</td>
+                  <td style="float: right"><b>677</b></td>
+                </tr>
+                <tr class="info">
+                  <td style="float: left; margin: 0 150px 0 15px">Земельные участки:</td>
+                  <td style="float: right"><b>187</b></td>
+                </tr>
+                </tbody>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 

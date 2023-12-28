@@ -35,8 +35,67 @@
 
 :root,
 [data-bs-theme=light] {
+  /*Основные цвета*/
+  --bs-color-primary: #5D83B2;
+  --bs-color-primary-2: #3766A0;
+  --bs-color-background-primary: #F6F6F6;
+  --bs-color-background-primary-2: var(--bs-white);
+  --bs-text-color-primary: var(--bs-black);
+  --bs-text-color-primary-2: #999;
 
+  /*Скролл бар*/
+  --bs-scroll-bar-color: var(--bs-color-primary);
+  --bs-scroll-bar-border: 1px solid rgba(128,128,128,.1);
+  --bs-scroll-bar-background-color: rgba(128,128,128,.1);
 
+  /*Input*/
+  --bs-input-text-color: var(--bs-black);
+  --bs-input-text-color-focus: var(--bs-black);
+  --bs-input-color: var(--bs-gray);
+  --bs-input-color-hover: var(--bs-color-primary);
+  --bs-input-color-focus: var(--bs-color-primary);
+  --bs-input-label-color: var(--bs-gray);
+  --bs-input-label-color-focus: var(--bs-color-primary);
+  --bs-input-icon-color: var(--bs-gray);
+  --bs-input-icon-color-focus: var(--bs-color-primary);
+
+  /*Buttons*/
+  /*Button Primary*/
+  --bs-button-text-color: var(--bs-white);
+  --bs-button-background-color: var(--bs-color-primary);
+  /*Button Secondary*/
+  --bs-button-secondary-text-color: var(--bs-white);
+  --bs-button-secondary-background-color: var(--bs-gray);
+  /*Button Tertiary*/
+  --bs-button-tertiary-text-color: var(--bs-black);
+  --bs-button-tertiary-background-color: var(--bs-white);
+  /*Button Map*/
+  --bs-button-map-icon-color: var(--bs-color-primary);
+  --bs-button-map-text-color: var(--bs-black);
+  --bs-button-map-background-color: var(--bs-white);
+  /*Button GPS + SMART*/
+  --bs-button-gps-text-color: var(--bs-white);
+  --bs-button-gps-background-color: var(--bs-color-primary);
+  /*Header*/
+  --bs-header-link-color: var(--bs-gray);
+  --bs-header-menu-button-color: var(--bs-gray);
+  /*Select*/
+  --bs-selection-checkbox-checked-color: var(--bs-color-primary);
+
+  /*Цвет заднего фона шапки*/
+  --bs-header-bacground-color: var(--bs-white);
+  --bs-header-text-color: ;
+
+  /*Snackbar*/
+  --bs-primary-snackbar-color: var(--bs-color-primary);
+  --bs-primary-snackbar-text-color: var(--bs-white);
+  --bs-success-snackbar-color: #0c6;
+  --bs-success-snackbar-text-color: var(--bs-white);
+  --bs-error-snackbar-color: #f44336;
+  --bs-error-snackbar-text-color: var(--bs-white);
+}
+
+[data-bs-theme=dark] {
   /*Основные цвета*/
   --bs-color-primary: #5D83B2;
   --bs-color-primary-2: #3766A0;
@@ -71,39 +130,14 @@
   --bs-button-map-icon-color: var(--bs-color-primary);
   --bs-button-map-text-color: var(--bs-black);
   --bs-button-map-background-color: var(--bs-white);
-
-  /*Header*/
-  --bs-header-bacground-color: var(--bs-white);
-  --bs-header-link-color: var(--bs-gray);
   /*Button GPS + SMART*/
   --bs-button-gps-text-color: var(--bs-white);
   --bs-button-gps-background-color: var(--bs-color-primary);
-}
-
-[data-bs-theme=dark] {
-  /*Основные цвета*/
-  --bs-color-primary: #5D83B2;
-  --bs-color-primary-2: #3766A0;
-
-  /*Скролл бар*/
-  --bs-scroll-bar-color: var(--bs-color-primary);
-  --bs-scroll-bar-border: 1px solid rgba(128,128,128,.1);
-  --bs-scroll-bar-background-color: rgba(128,128,128,.1);
-
-  /*Input*/
-  --bs-input-text-color: var(--bs-black);
-  --bs-input-text-color-focus: var(--bs-black);
-  --bs-input-color: var(--bs-gray);
-  --bs-input-color-hover: var(--bs-color-primary);
-  --bs-input-color-focus: var(--bs-color-primary);
-  --bs-input-label-color: var(--bs-gray);
-  --bs-input-label-color-focus: var(--bs-color-primary);
-  --bs-input-icon-color: var(--bs-gray);
-  --bs-input-icon-color-focus: var(--bs-color-primary);
-
-  /*Button Primary*/
-  --bs-button-text-color: var(--bs-white);
-  --bs-button-background-color: var(--bs-color-primary);
+  /*Header*/
+  --bs-header-link-color: var(--bs-gray);
+  --bs-header-menu-button-color: var(--bs-gray);
+  /*Select*/
+  --bs-selection-checkbox-checked-color: var(--bs-color-primary);
 
   /*Цвет заднего фона шапки*/
   --bs-header-bacground-color: var(--bs-white);

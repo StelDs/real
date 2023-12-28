@@ -1,0 +1,948 @@
+<main>
+  <div class="search-block">
+    <div style="display: block; margin: 0 auto">
+      <h1>Недвижимость в Воронеже</h1><br>
+      <div class="container menu-block">
+        <div class="row align-items-center">
+          <div class="col-xl-4">
+            <h2>Квартира</h2>
+          </div>
+          <div class="col-xl-8 orientation-left">
+            <mat-button-toggle-group [(value)]="byToggleValue" style="width: 100%" name="ingredients"
+                                     aria-label="Ingredients" multiple>
+              <mat-button-toggle style="width: 50%" value="1">Снять</mat-button-toggle>
+              <mat-button-toggle style="width: 50%" value="2">Купить</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Количество комнат
+              <mat-icon matTooltip="Средняя площадь 2-комнатных квартир в Воронеже - 65, а 3-комнатных - 84"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <mat-button-toggle-group [(value)]="roomsToggleValue" style="width: 100%" name="ingredients"
+                                     aria-label="Ingredients" multiple>
+              <mat-button-toggle style="width: 27%" value="1">Студия</mat-button-toggle>
+              <mat-button-toggle style="width: 14%" value="2">1</mat-button-toggle>
+              <mat-button-toggle style="width: 14%" value="3">2</mat-button-toggle>
+              <mat-button-toggle style="width: 14%" value="4">3</mat-button-toggle>
+              <mat-button-toggle style="width: 14%" value="5">4</mat-button-toggle>
+              <mat-button-toggle style="width: 17%" value="6">4+</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-4 sub-text">
+            Значимость
+            <mat-icon matTooltip="Оценка от 0 до 10"
+                      matTooltipPosition="right">info
+            </mat-icon>
+          </div>
+          <div class="col-lg-8 orientation-left">
+            <input [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}" style="width: 27%"
+                   type="number" min="0" max="10">
+            <input [ngStyle]="{'visibility': roomsToggleContain('2') ? 'hidden' : 'unset'}" style="width: 14%"
+                   type="number" min="0" max="10">
+            <input [ngStyle]="{'visibility': roomsToggleContain('3') ? 'hidden' : 'unset'}" style="width: 14%"
+                   type="number" min="0" max="10">
+            <input [ngStyle]="{'visibility': roomsToggleContain('4') ? 'hidden' : 'unset'}" style="width: 14%"
+                   type="number" min="0" max="10">
+            <input [ngStyle]="{'visibility': roomsToggleContain('5') ? 'hidden' : 'unset'}" style="width: 14%"
+                   type="number" min="0" max="10">
+            <input [ngStyle]="{'visibility': roomsToggleContain('6') ? 'hidden' : 'unset'}" style="width: 17%"
+                   type="number" min="0" max="10">
+          </div>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Площадь</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="1" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="2" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="3" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Цена</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="1" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="2" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="3" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Этаж</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="1" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="2" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="3" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Высота потолков</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="1" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="2" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="3" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Кухня</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="1" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="2" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="3" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Ремонт</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Косметический</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Евро</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Дизайнерский</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Требует ремонта</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Балкон</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Балкон</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Лоджия</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Мебель</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Есть</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Нет</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Тип жилья</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Новостройка</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Вторичка</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Санузел</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Совмещённый</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Совместный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Несколько</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+        <div class="row align-items-center">
+          <div class="col-12">
+            <h2>Дом</h2>
+          </div>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Срок сдачи</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="date" [matDatepicker]="picker1" autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-error>
+                    Неверная дата
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="date" [matDatepicker]="picker2" autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-error>
+                    Неверная дата
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="date" [matDatepicker]="picker3" autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                  <mat-datepicker #picker3></mat-datepicker>
+                  <mat-error>
+                    Неверная дата
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Этажей в доме</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>От</mat-label>
+                  <input matInput name="1" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-6 col-sm-6 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>До</mat-label>
+                  <input matInput name="2" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-12 col-lg-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Предпочтение</mat-label>
+                  <input matInput name="3" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Тип дома</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Кирпичный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Монолитный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Панельный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Кирпично-монолитный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Блочный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Деревянный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Железобетонный</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Эпоха</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Сталинка</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Хрущёвка</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Брежневка</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Парковка</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Закрытая</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Подземная</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Открытая</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-12">
+            <h2>Расположение</h2>
+          </div>
+        </div>
+        <div class="row select-block align-items-center">
+          <div class="col-lg-2 center-block">
+            <b class="text-left">Рядом</b>
+          </div>
+          <div class="col-lg-2">
+            <mat-slider
+              color="primary"
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel="true">
+              <input>
+            </mat-slider>
+          </div>
+          <div class="col-sm-6 col-6 display-none-after"></div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-before">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-6 display-none-after">
+            <div class="sub-text">
+              Значимость
+              <mat-icon matTooltip="Оценка от 0 до 10"
+                        matTooltipPosition="right">info
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Парк</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Водоём</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-6">
+                <mat-checkbox>Станция метро</mat-checkbox>
+              </div>
+              <div class="col-lg-4 col-md-6 col-6">
+                <input style="width: 120px" type="number" min="0" max="10">
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row">
+          <div class="col but-block">
+            <button mat-raised-button type="submit"
+                    class="mat-raised-button-primary-color registration-button"
+                    routerLink="/search">
+              Зарегистрироваться
+            </button>
+          </div>
+          <div class="col but-block">
+            <button mat-raised-button (click)="restore()"
+                    class="mat-raised-button-secondary-color login-button">
+              Сбросить
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 40px">
+
+  </div>
+</main>
+
+

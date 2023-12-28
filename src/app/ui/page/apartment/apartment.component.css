@@ -1,0 +1,52 @@
+.apartment-block {
+  margin: 20px 20px 20px 20px;
+  background-color: white;
+  box-shadow: 0 0 14px 7px rgba(34, 60, 80, 0.09);
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.price-block {
+  margin: 20px 20px 20px 20px;
+  background-color: white;
+  box-shadow: 0 0 14px 7px rgba(34, 60, 80, 0.09);
+  border-radius: 10px;
+  padding: 30px;
+  height: max-content;
+}
+
+.carousel-block {
+
+}
+
+.sub-text {
+  color: var(--bs-header-link-color);
+}
+
+.slide-1 {
+  border-radius: 100px !important;
+}
+
+.phone-button {
+  margin: 0px auto;
+  display: block;
+  width: auto;
+}
+
+.p-placeholder {
+  text-align: left;
+  color: var(--bs-text-color-primary-2);
+  margin: 2px;
+}
+
+tr {
+  text-align: left;
+}
+
+.td-left {
+  padding-right: 25px !important;
+}
+
+h3 {
+  margin: 20px 0px;
+}

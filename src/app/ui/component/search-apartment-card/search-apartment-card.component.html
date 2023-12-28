@@ -1,0 +1,65 @@
+<div class="row card-block">
+  <div class="col img-block">
+    <img src="assets/tests/test.png" alt="img">
+  </div>
+  <div class="col">
+    <div class="row">
+      <h3 class="h3-header" routerLink="/apartment">{{apartment.rooms}}, {{apartment.square}} м²</h3>
+    </div>
+    <div class="row">
+      <p class="p-placeholder">{{apartment.residentialComplex}}</p>
+      <p class="p-placeholder">{{apartment.address}}</p>
+      <p class="p-placeholder">{{apartment.developer}}</p>
+    </div>
+
+    <div>
+      <table>
+        <tr>
+          <td class="td-left p-placeholder">Кухня</td>
+          <td>{{apartment.info.kitchen}}</td>
+        </tr>
+        <tr>
+          <td class="td-left p-placeholder">Этаж</td>
+          <td>{{apartment.info.floor}}</td>
+        </tr>
+        <tr>
+          <td class="td-left p-placeholder">Срок сдачи</td>
+          <td>{{apartment.info.deadlineDelivery}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-bottom: 40px"></div>
+    <div class="row">
+      <h3 class="h3-price">{{apartment.price}} ₽</h3>
+    </div>
+    <div class="row">
+      <p class="p-placeholder">{{apartment.pricePerSquare}} ₽/м²</p>
+    </div>
+  </div>
+  <div class="col right-block">
+    <div class="row" style="margin-top: 110px">
+      <h2 class="h2-percent">{{apartment.percent}} %</h2>
+    </div>
+    <div class="row" style="margin-top: 110px"></div>
+    <div class="row">
+      <button mat-icon-button color="warn" *ngIf="apartment.like" (click)="changeLike()">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button color="black" *ngIf="!apartment.like" (click)="changeLike()">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+      <button mat-raised-button (click)="showPhone()"
+              class="mat-raised-button-primary-color phone-button">
+        Показать номер
+      </button>
+    </div>
+    <div class="row">
+
+    </div>
+  </div>
+  <div style="margin-bottom: 25px"></div>
+</div>

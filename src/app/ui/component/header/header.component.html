@@ -8,70 +8,36 @@
             <mat-icon>place icon</mat-icon>
             {{activeCity}}
         </button>
+
         <mat-menu #currentLocation="matMenu" yPosition="below" xPosition="after">
             <div *ngFor="let city of cities">
                 <button mat-menu-item (click)="setActivLocation(city)">{{city}}</button>
             </div>
         </mat-menu>
 
-        <button mat-button routerLink="not-found">Купить</button>
-        <button mat-button routerLink="not-found">Снять</button>
+        <button mat-button routerLink="default-search" class="small-header-hide">Купить</button>
+        <button mat-button routerLink="default-search" class="small-header-hide">Снять</button>
 
         <span class="header-spacer"></span>
 
-        <button mat-button (click)="routingOrLogin('/not-found')">
+        <button mat-button (click)="routingOrLogin('place-ad')" class="small-header-hide">
             <img src="/assets/img/add.svg" alt="Add" >
             Разместить объявление
         </button>
 
-        <button mat-button (click)="routingOrLogin('/not-found')">
+        <button mat-button (click)="routingOrLogin('profile')" class="small-header-hide">
             <img src="/assets/img/user.svg" alt="user" width="30" height="22">
             Личный кабинет
         </button>
 
+      <button mat-icon-button class="small-header header-menu-button" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="routingOrLogin('profile')">Личный кабинет</button>
+        <button mat-menu-item (click)="routingOrLogin('place-ad')">Разместить объявление</button>
+        <button mat-menu-item routerLink="/default-search">Снять</button>
+        <button mat-menu-item routerLink="/default-search">Купить</button>
+      </mat-menu>
     </mat-toolbar>
 </header>
-
-<!--<header>-->
-<!--  <nav class="navbar navbar-expand-lg bg-body">-->
-<!--    <div class="container-fluid">-->
-<!--      <a class="navbar-brand" href="/">-->
-<!--        <img src="/assets/logo.svg" alt="Bootstrap" width="30" height="24">-->
-<!--      </a>-->
-
-<!--      <a class="navbar-brand" href="/">-->
-
-<!--      </a>-->
-
-<!--      &lt;!&ndash;   Кнопка при смол экране   &ndash;&gt;-->
-<!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--      </button>-->
-
-<!--      <div class="collapse navbar-collapse">-->
-<!--        <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" href="/">Купить</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" href="/">Снять</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--        <ul class="d-flex navbar-nav mb-2 mb-lg-0">-->
-<!--          <li class="nav-item">-->
-<!--            <button class="nav-link" href="/">-->
-<!--              <img src="/assets/img/add.svg" alt="Bootstrap" width="30" height="24">-->
-<!--              Разместить объявление-->
-<!--            </button>-->
-<!--          </li>-->
-<!--          <li class="nav-item" (click)="login()">-->
-<!--            <button class="nav-link">-->
-<!--              <img src="/assets/img/user.svg" alt="Bootstrap" width="30" height="24">-->
-<!--              Личный кабинет-->
-<!--            </button>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </nav>-->
-<!--</header>-->

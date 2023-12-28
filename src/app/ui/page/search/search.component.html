@@ -1,0 +1,14 @@
+<main>
+  <div class="search-block">
+    <div style="display: block; margin: 0 auto">
+      <h1>Недвижимость в Воронеже</h1><br>
+      <div class="container text-center menu-block">
+        <div class="row" style="margin-left: 40px; margin-right: 40px" *ngFor="let item of cards">
+          <app-search-apartment-card [apartment]="item"></app-search-apartment-card>
+          <hr class="hr-shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 40px"></div>
+</main>
