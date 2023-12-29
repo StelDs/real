@@ -1,5 +1,6 @@
 # IDE
 .angular
+package-lock.json
 assistant-front.iml
 
 # Angular files
