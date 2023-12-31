@@ -14,4 +14,4 @@ RUN npm run build --prod
 #
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=node /usr/src/app/dist /usr/share/nginx/html
+COPY --from=node /usr/src/app/dist/realty-front /usr/share/nginx/html
