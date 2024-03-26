@@ -8,6 +8,7 @@ import {MatTabChangeEvent} from "@angular/material/tabs";
 })
 export class ProfileComponent implements OnInit {
   public selectedTab: number = 0;
+  fileName?: string;
 
   constructor() {
   }

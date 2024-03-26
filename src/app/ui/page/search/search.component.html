@@ -7,6 +7,13 @@
           <app-search-apartment-card [apartment]="item"></app-search-apartment-card>
           <hr class="hr-shadow">
         </div>
+        <mat-paginator [length]="totalElements"
+                       [pageSize]="size"
+                       [pageSizeOptions]="pageSizeOptions"
+                       [showFirstLastButtons]="true"
+                       (page)="handlePageEvent($event)"
+                       aria-label="Select page">
+        </mat-paginator>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../core/auth/auth-service";
-import {User} from "../../../core/model/user";
+import {LoginForm} from "../../../core/model/user";
 import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginDialogComponent implements OnInit {
   constructor(private readonly authService: AuthService,
               private dialogRef: MatDialogRef<LoginDialogComponent>) {
     this.loginForm = new FormGroup({
-      login: new FormControl('', [Validators.required]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
   }
@@ -27,12 +27,21 @@ export class LoginDialogComponent implements OnInit {
 
   public login(): void {
     if (!this.loginForm.invalid) {
-      let form: User.LoginForm = {
-        login: this.loginForm.controls['login'].value,
+      let form: LoginForm = {
+        username: this.loginForm.controls['username'].value,
         password: this.loginForm.controls['password'].value,
       }
-      this.authService.login(form)
-      this.dialogRef.close();
+      this.authService.login(form).subscribe({
+        next: (data: any): void => {
+          this.authService.setAccessToken(data.accessToken)
+          // this.setRefreshToken(data.refresh)
+          this.authService.setUsername(form.username)
+          this.dialogRef.close();
+        },
+        error: err => {
+          console.log('-')
+        }
+      })
     }
   }
 }

@@ -8,8 +8,8 @@
         <form [formGroup]="registrationForm">
             <mat-form-field appearance="outline">
                 <mat-label>Логин</mat-label>
-                <input matInput formControlName="login">
-                <mat-error *ngIf="registrationForm.get('login')?.hasError('required')">
+                <input matInput formControlName="username">
+                <mat-error *ngIf="registrationForm.get('username')?.hasError('required')">
                     Это поле <strong>обязательно</strong>
                 </mat-error>
             </mat-form-field>

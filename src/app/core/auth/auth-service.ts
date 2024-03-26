@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
-import {User} from "../model/user";
 import {HttpClient} from "@angular/common/http";
-import {getLoginUrl, getRegistrationUrl} from "../model/properties";
 import {Router} from "@angular/router";
+import {LoginForm, RegistrationForm} from "../model/user";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +26,23 @@ export class AuthService {
    */
   public getRefreshToken(): string {
     let refreshToken: string | null = localStorage.getItem("refresh_token");
-    if (refreshToken == null)
+    if (refreshToken == null) {
+      this.logout();
       return '';
+    }
     return refreshToken;
+  }
+
+  /**
+   * Возвращает username пользователя
+   */
+  public getUsername(): string {
+    let username: string | null = localStorage.getItem("username");
+    if (username == null) {
+      this.logout();
+      return '';
+    }
+    return username;
   }
 
   /**
@@ -36,8 +50,12 @@ export class AuthService {
    * @param accessToken access токен
    * @private
    */
-  private setAccessToken(accessToken: string): void {
+  setAccessToken(accessToken: string): void {
     localStorage.setItem("access_token", accessToken);
+  }
+
+  setUsername(username: string): void {
+    localStorage.setItem("username", username);
   }
 
   /**
@@ -78,30 +96,16 @@ export class AuthService {
    * Регистрация пользователя
    * @param form форма регистрации для отправки на сервер
    */
-  public registration(form: User.RegistrationForm): void {
-    this.http.post(getRegistrationUrl(), form).subscribe({
-      next: (data: any): void => {
-        this.setAccessToken(data.access)
-        this.setRefreshToken(data.refresh)
-        },
-      error: err => {
-        this.setAccessToken('fake')
-        this.setRefreshToken('fake')
-      }
-    })
+  public registration(form: RegistrationForm): Observable<any> {
+    return this.http.post('/api/v1/auth/register', form)
   }
 
-  public login(form: User.LoginForm): void {
-    this.http.post(getLoginUrl(), form).subscribe({
-      next: (data: any): void => {
-        this.setAccessToken(data.access)
-        this.setRefreshToken(data.refresh)
-      },
-      error: err => {
-        this.setAccessToken('fake')
-        this.setRefreshToken('fake')
-      }
-    })
+  /**
+   * Авторизация пользователя
+   * @param form форма авторизации для отправки на сервер
+   */
+  public login(form: LoginForm): Observable<any> {
+    return this.http.post('/api/v1/auth/authenticate', form)
   }
 
   public logout(): void {

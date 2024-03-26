@@ -130,7 +130,7 @@
                 </section>
               </div>
             </ng-template>
-            <input class="btn inpt btn-group-inpt" placeholder="Введите город, адрес, район, метро, ЖК">
+            <input class="btn inpt btn-group-inpt" placeholder="Введите город, адрес, район, метро, ЖК" [(ngModel)]="searchText">
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@
           <mat-icon>place icon</mat-icon>
           Показать на карте
         </button>
-        <button class="mat-raised-button-tertiary-color" routerLink="search" mat-button>Найти</button>
+        <button class="mat-raised-button-tertiary-color" mat-button (click)="search()">Найти</button>
         <button class="mat-raised-button-primary-color" routerLink="smart-search" mat-button>Smart-подбор</button>
       </div>
     </div>

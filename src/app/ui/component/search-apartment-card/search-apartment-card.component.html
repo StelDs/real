@@ -4,42 +4,54 @@
   </div>
   <div class="col">
     <div class="row">
-      <h3 class="h3-header" routerLink="/apartment">{{apartment.rooms}}, {{apartment.square}} м²</h3>
+      <h3 class="h3-header" routerLink="/apartment">Квартира {{apartment.square}} м²</h3>
     </div>
     <div class="row">
-      <p class="p-placeholder">{{apartment.residentialComplex}}</p>
-      <p class="p-placeholder">{{apartment.address}}</p>
-      <p class="p-placeholder">{{apartment.developer}}</p>
+<!--      <p class="p-placeholder">{{apartment.residentialComplex}}</p>-->
+      <p class="p-placeholder">
+        <span>{{apartment.address}}</span>
+      </p>
+      <p class="p-placeholder" *ngIf="apartment.entrance != null">Подъезд {{apartment.entrance}}</p>
+      <p class="p-placeholder" *ngIf="apartment.apartmentNumber != null">Квартира {{apartment.apartmentNumber}}</p>
+<!--      <p class="p-placeholder">{{apartment.developer}}</p>-->
     </div>
 
     <div>
       <table>
         <tr>
-          <td class="td-left p-placeholder">Кухня</td>
-          <td>{{apartment.info.kitchen}}</td>
+          <td class="td-left p-placeholder">Комнат</td>
+          <td>{{apartment.quantityRooms}}</td>
         </tr>
         <tr>
           <td class="td-left p-placeholder">Этаж</td>
-          <td>{{apartment.info.floor}}</td>
+          <td>{{apartment.floor}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="apartment.squareKitchen != null">
+          <td class="td-left p-placeholder">Кухня</td>
+          <td>{{apartment.squareKitchen}} м²</td>
+        </tr>
+        <tr *ngIf="apartment.squareKitchenLivingRoom != null" >
+          <td class="td-left p-placeholder">Кухня-гостиная</td>
+          <td>{{apartment.squareKitchenLivingRoom}} м²</td>
+        </tr>
+<!--        <tr>
           <td class="td-left p-placeholder">Срок сдачи</td>
-          <td>{{apartment.info.deadlineDelivery}}</td>
-        </tr>
+          <td>{{apartment.deadlineDelivery}}</td>
+        </tr>-->
       </table>
     </div>
 
     <div style="margin-bottom: 40px"></div>
     <div class="row">
-      <h3 class="h3-price">{{apartment.price}} ₽</h3>
+      <h3 class="h3-price">{{formatNumber(apartment.price)}} ₽</h3>
     </div>
     <div class="row">
-      <p class="p-placeholder">{{apartment.pricePerSquare}} ₽/м²</p>
+      <p class="p-placeholder">{{(apartment.squarePrice)}} ₽/м²</p>
     </div>
   </div>
   <div class="col right-block">
     <div class="row" style="margin-top: 110px">
-      <h2 class="h2-percent">{{apartment.percent}} %</h2>
+      <h2 *ngIf="false" class="h2-percent">{{apartment.price}} %</h2>
     </div>
     <div class="row" style="margin-top: 110px"></div>
     <div class="row">

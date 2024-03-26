@@ -1,27 +1,27 @@
-export namespace User {
-  export interface ProfileForm {
-    surname: string;
-    name: string;
-    patronymic: string;
-    phone: string;
-    email: string;
-    date: string;
-  }
-
-  export interface RegistrationForm {
-    login: string;
-    phone: string;
-    email: string;
-    password: string;
-  }
-
-  export interface LoginForm {
-    login: string;
-    password: string;
-  }
-
-  export interface TokenRequest {
-    access: string;
-    refresh: string;
-  }
+export interface ProfileForm {
+  surname: string;
+  username: string;
+  name: string;
+  patronymic: string;
+  email: string;
+  phone: string;
+  dateOfBirth: Date;
 }
+
+export interface RegistrationForm {
+  username: string;
+  phone: string;
+  email: string;
+  password: string;
+}
+
+export interface LoginForm {
+  username: string;
+  password: string;
+}
+
+export interface TokenRequest {
+  access: string;
+  refresh: string;
+}
+

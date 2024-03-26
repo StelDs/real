@@ -13,7 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginDialogComponent} from './ui/component/login-dialog/login-dialog.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RegistrationDialogComponent} from './ui/component/registration-dialog/registration-dialog.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
@@ -43,6 +43,8 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 import {MatCarouselModule} from "ng-mat-carousel";
 import { PhoneDialogComponent } from './ui/page/search/ui/component/phone-dialog/phone-dialog.component';
 import { DefaultSearchComponent } from './ui/page/default-search/default-search.component';
+import { FileUploadComponent } from './ui/component/file-upload/file-upload.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -62,38 +64,41 @@ import { DefaultSearchComponent } from './ui/page/default-search/default-search.
     SearchComponent,
     SearchApartmentCardComponent,
     PhoneDialogComponent,
-    DefaultSearchComponent
+    DefaultSearchComponent,
+    FileUploadComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatDialogModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonToggleModule,
-    MatTreeModule,
-    MatExpansionModule,
-    MatSelectModule,
-    MatCardModule,
-    MatSliderModule,
-    MatCheckboxModule,
-    MatListModule,
-    OverlayModule,
-    HttpClientModule,
-    MatTabsModule,
-    MatDatepickerModule,
-    MatDatepickerModule,
-    NativeDateModule,
-    MatNativeDateModule,
-    MatSnackBarModule,
-    MatTooltipModule,
-    MatCarouselModule.forRoot(),
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatDialogModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatButtonToggleModule,
+        MatTreeModule,
+        MatExpansionModule,
+        MatSelectModule,
+        MatCardModule,
+        MatSliderModule,
+        MatCheckboxModule,
+        MatListModule,
+        OverlayModule,
+        HttpClientModule,
+        MatTabsModule,
+        MatDatepickerModule,
+        MatDatepickerModule,
+        NativeDateModule,
+        MatNativeDateModule,
+        MatSnackBarModule,
+        MatTooltipModule,
+        MatCarouselModule.forRoot(),
+        FormsModule,
+        MatPaginatorModule,
+    ],
   providers: [
     OverlayContainer,
     {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'},

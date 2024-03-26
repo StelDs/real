@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit {
   public districtsOverlayIsOpen: boolean = false;
   public roomsOverlayIsOpen: boolean = false;
   public priceOverlayIsOpen: boolean = false;
+  public searchText: string = ''
 
   public bayOverlayGroup: FormGroup = this.fb.group({
     buy: false,
@@ -22,7 +24,7 @@ export class HomeComponent implements OnInit {
     newBuilding: false,
     secondary: false,
     room: false,
-    Fraction: false,
+    fraction: false,
     house: false,
     countryHouse: false,
     region: false,
@@ -43,7 +45,8 @@ export class HomeComponent implements OnInit {
     max: null,
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private readonly fb: FormBuilder,
+              private readonly router: Router) {
   }
 
   public ngOnInit(): void {
@@ -92,5 +95,32 @@ export class HomeComponent implements OnInit {
         min: newMin
       });
     }
+  }
+
+  public search(): void{
+    this.router.navigate(['search'],{
+      queryParams: {
+        text: this.searchText,
+        price_min: this.priceOverlayGroup.controls['min'].value,
+        price_max: this.priceOverlayGroup.controls['max'].value,
+        bay_buy: this.bayOverlayGroup.controls['buy'].value,
+        bay_takeOff: this.bayOverlayGroup.controls['takeOff'].value,
+        bay_dailyRent: this.bayOverlayGroup.controls['dailyRent'].value,
+        districts_newBuilding: this.districtsOverlayGroup.controls['newBuilding'].value,
+        districts_secondary: this.districtsOverlayGroup.controls['secondary'].value,
+        districts_room: this.districtsOverlayGroup.controls['room'].value,
+        districts_fraction: this.districtsOverlayGroup.controls['fraction'].value,
+        districts_house: this.districtsOverlayGroup.controls['house'].value,
+        districts_countryHouse: this.districtsOverlayGroup.controls['countryHouse'].value,
+        districts_region: this.districtsOverlayGroup.controls['region'].value,
+        districts_garage: this.districtsOverlayGroup.controls['garage'].value,
+        rooms_room_1: this.roomsOverlayGroup.controls['room_1'].value,
+        rooms_room_2: this.roomsOverlayGroup.controls['room_2'].value,
+        rooms_room_3: this.roomsOverlayGroup.controls['room_3'].value,
+        rooms_room_4: this.roomsOverlayGroup.controls['room_4'].value,
+        rooms_room_4_plus: this.roomsOverlayGroup.controls['room_4_plus'].value,
+        rooms_atelier: this.roomsOverlayGroup.controls['atelier'].value
+      }
+    })
   }
 }
