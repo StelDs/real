@@ -3,7 +3,7 @@ version: '3.8'
 services:
   front:
     container_name: Front
-    image: hh/reality-front:latest
+    image: danyilsmirnov/stell-front:1.0
     build: .
     ports:
       - "4201:80"
