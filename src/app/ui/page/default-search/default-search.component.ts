@@ -22,4 +22,9 @@ export class DefaultSearchComponent implements OnInit {
   public restore(): void {
     window.location.reload();
   }
+
+  search() {
+    sessionStorage.setItem('toDefaultSearch', JSON.stringify(''));
+    sessionStorage.setItem('searchType', "DefaultSearch");
+  }
 }

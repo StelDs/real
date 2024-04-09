@@ -11,6 +11,7 @@ export interface ApartmentShortCard {
   squareKitchen: number;
   squareKitchenLivingRoom: number;
   like: boolean;
+  percent: number;
 }
 
 export interface PhoneData {

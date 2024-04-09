@@ -51,9 +51,11 @@
   </div>
   <div class="col right-block">
     <div class="row" style="margin-top: 110px">
-      <h2 *ngIf="false" class="h2-percent">{{apartment.price}} %</h2>
+      <h2 class="h2-percent">{{apartment.percent}} %</h2>
     </div>
-    <div class="row" style="margin-top: 110px"></div>
+    <div class="row" style="margin-top: 110px">
+
+    </div>
     <div class="row">
       <button mat-icon-button color="warn" *ngIf="apartment.like" (click)="changeLike()">
         <mat-icon>favorite</mat-icon>

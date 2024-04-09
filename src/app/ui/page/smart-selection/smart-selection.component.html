@@ -21,23 +21,23 @@
               <b class="text-left">Количество комнат</b>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
-              <mat-slider
-                color="primary"
-                max="10"
-                min="0"
-                step="1"
-                thumbLabel="true">
-                <input>
-              </mat-slider>
-            </div>
+<!--            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">-->
+<!--              <mat-slider-->
+<!--                color="primary"-->
+<!--                max="10"-->
+<!--                min="0"-->
+<!--                step="1"-->
+<!--                thumbLabel="true">-->
+<!--                <input>-->
+<!--              </mat-slider>-->
+<!--            </div>-->
           </div>
         </div>
         <div class="row">
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Студия</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isAtelier">Студия</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -51,7 +51,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>1 комната</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isOne">1 комната</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -64,7 +64,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>2 комнаты</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isTwo">2 комнаты</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -77,7 +77,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>3 комнаты</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isThree">3 комнаты</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -90,7 +90,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>4 комнаты</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFour">4 комнаты</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -106,7 +106,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Свободная планировка</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFreeLayout">Свободная планировка</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -119,7 +119,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Еврооднушка</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isOneEuro" value="">Еврооднушка</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -132,7 +132,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Евродвушка</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isTwoEuro">Евродвушка</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -145,7 +145,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Евротрешка</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isThreeEuro">Евротрешка</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -158,7 +158,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>5 комнат и больше</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFivePlus">5 комнат и больше</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -185,6 +185,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="priceWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -195,19 +196,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput name="1" autocomplete="off" [(ngModel)]="priceMin">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput name="2" autocomplete="off" [(ngModel)]="priceMax">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput name="2" autocomplete="off" [(ngModel)]="pricePreference">
             </mat-form-field>
           </div>
         </div>
@@ -225,6 +226,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="countOfApartmentsFerFloorWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -235,19 +237,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="countOfApartmentsFerFloorMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="countOfApartmentsFerFloorMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="countOfApartmentsFerFloorPreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -357,6 +359,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="squarePriceWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -367,19 +370,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="squarePriceMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="squarePriceMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="squarePricePreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -406,6 +409,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="squareWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -416,19 +420,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="squareMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="squareMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="squarePreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -446,6 +450,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="residentialSquareWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -456,19 +461,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="residentialSquareMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="residentialSquareMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="residentialSquarePreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -486,6 +491,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="squareKitchenWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -496,19 +502,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="squareKitchenMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="squareKitchenMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="squareKitchenPreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -526,6 +532,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="floorWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -536,19 +543,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="floorMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="floorMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="floorPreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -556,7 +563,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Не первый</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isNotFirstFloor">Не первый</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -569,7 +576,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Не последний</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isNotLastFloor">Не последний</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -585,7 +592,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Только последний</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isLastFloor">Только последний</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -612,6 +619,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="countFloorWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -622,19 +630,19 @@
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>От</mat-label>
-              <input matInput name="1" autocomplete="off">
+              <input matInput [(ngModel)]="countFloorMin" name="1" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>До</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="countFloorMax" name="2" autocomplete="off">
             </mat-form-field>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
             <mat-form-field appearance="outline">
               <mat-label>Предпочтения</mat-label>
-              <input matInput name="2" autocomplete="off">
+              <input matInput [(ngModel)]="countFloorPreference" name="2" autocomplete="off">
             </mat-form-field>
           </div>
         </div>
@@ -652,6 +660,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="apartmentTypeWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -662,7 +671,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Квартира</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFlat">Квартира</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -675,7 +684,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Студия</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isAtelierHome">Студия</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -688,7 +697,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Апартаменты</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isApartments">Апартаменты</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -704,7 +713,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Котедж</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isCottage">Коттедж</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -717,7 +726,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Частный дом</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isPrivateHome">Частный дом</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -863,6 +872,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="saleTypeWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -873,7 +883,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>ДДУ</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isDDU">ДДУ</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -886,7 +896,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Договор ЖСК</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isHBCAgreement">Договор ЖСК</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -902,7 +912,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>ДКП</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isPREP">ДКП</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -915,7 +925,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Переуступка</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isAssignment">Переуступка</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -976,6 +986,7 @@
                 max="10"
                 min="0"
                 step="1"
+                ngMod
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -986,7 +997,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Без отделки</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isWithoutFinishing">Без отделки</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -999,7 +1010,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Предчистовая</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isPreCleaning">Предчистовая</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1012,7 +1023,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Чистовая</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFinishing">Чистовая</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1028,7 +1039,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Эконом-класс</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isEconomyClass">Эконом-класс</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1041,7 +1052,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Комфорт-класс</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isComfortClass">Комфорт-класс</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1054,7 +1065,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Бизнес-класс</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isBusinessClass">Бизнес-класс</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1475,6 +1486,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="balconyWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -1485,7 +1497,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Балкон</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isBalcony">Балкон</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1498,7 +1510,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Лоджия</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isLoggia">Лоджия</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1514,7 +1526,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Утепленный балкон</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isInsulatedBalcony">Утепленный балкон</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1620,6 +1632,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="ceilingHeightWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -1630,7 +1643,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>до 2.7</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isUpto27">до 2.7</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1643,7 +1656,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>от 2.7</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFrom27">от 2.7</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1659,7 +1672,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>от 3</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFrom3">от 3</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -1672,7 +1685,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>от 3.5</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isFrom35">от 3.5</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2006,6 +2019,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="houseTypeWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -2016,7 +2030,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Кирпичный</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isBrick">Кирпичный</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2029,7 +2043,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Монолитный</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isMonolithic">Монолитный</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2042,7 +2056,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Панельный</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isPanel">Панельный</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2058,7 +2072,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Монолитно-кирпичный</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isMonolithicBrick">Монолитно-кирпичный</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2071,7 +2085,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Железобетонный</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isReinforcedConcrete">Железобетонный</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2084,7 +2098,7 @@
             </div>
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Другой</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isAnother">Другой</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2111,6 +2125,7 @@
                 max="10"
                 min="0"
                 step="1"
+                [(ngModel)]="isSmartHomeWeight"
                 thumbLabel="true">
                 <input>
               </mat-slider>
@@ -2121,7 +2136,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Да</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isSmart">Да</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2137,7 +2152,7 @@
           <section class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
             <div class="row">
               <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                <mat-checkbox>Нет</mat-checkbox>
+                <mat-checkbox [(ngModel)]="isNotSmart">Нет</mat-checkbox>
               </div>
 <!--              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
                 &lt;!&ndash;                [ngStyle]="{'visibility': roomsToggleContain('1') ? 'hidden' : 'unset'}"&ndash;&gt;
@@ -2807,7 +2822,7 @@
 
         <div class="row">
           <div class="col but-block">
-            <button mat-raised-button type="submit"
+            <button mat-raised-button type="submit" (click)="search()"
                     class="mat-raised-button-primary-color registration-button"
                     routerLink="/search">
               Поиск

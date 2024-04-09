@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApartmentShortCard} from "../../../core/model/apartment";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ApartmentSearchDto} from "../../../core/model/search";
+import {ApartmentSearchDto, ApartmentSmartSearchDto} from "../../../core/model/search";
 import {ApartmentService} from "../../../core/service/apartment-service";
 import {PageEvent} from "@angular/material/paginator";
 
@@ -11,6 +11,9 @@ import {PageEvent} from "@angular/material/paginator";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  public toSmartSearch!: ApartmentSmartSearchDto;
+  public toDefaultSearch!: ApartmentSmartSearchDto;
+
   public cards?: ApartmentShortCard[];
   public totalPages!: number;
   public totalElements!: number;
@@ -29,6 +32,45 @@ export class SearchComponent implements OnInit {
   }
 
   public loadPage(): void {
+    switch (sessionStorage.getItem('searchType')) {
+      case 'SmartSearch':
+        this.loadSmartSearch();
+        break;
+      case 'DefaultSearch':
+        this.loadDefaultSearch();
+        break;
+      default:
+        this.loadDefault();
+        break;
+    }
+  }
+
+  handlePageEvent($event: PageEvent): void {
+    this.size = $event.pageSize;
+    this.page = $event.pageIndex;
+    this.loadPage();
+    window.scroll(0, 0)
+    console.log(this.size)
+    console.log(this.page)
+  }
+
+  private loadSmartSearch(): void {
+    // @ts-ignore
+    this.toSmartSearch = JSON.parse(sessionStorage.getItem("toSmartSearch"));
+    this.apartmentService.smartSearch(this.toSmartSearch, this.size, this.page).subscribe({
+      next: (data: any): void => {
+        this.cards = data?.content
+        this.totalPages = data?.totalPages
+        this.totalElements = data?.totalElements
+      }
+    })
+  }
+
+  private loadDefaultSearch(): void {
+    this.loadDefault();
+  }
+
+  private loadDefault(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       const searchDto: ApartmentSearchDto = {
         buy: {
@@ -64,12 +106,4 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  handlePageEvent($event: PageEvent): void {
-    this.size = $event.pageSize;
-    this.page = $event.pageIndex;
-    this.loadPage();
-    window.scroll(0, 0)
-    console.log(this.size)
-    console.log(this.page)
-  }
 }

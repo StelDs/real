@@ -9,6 +9,16 @@ main {
   width: 100%;
 }
 
+@media (min-width: 1200px) {
+    .search-block {
+      background-image: url("/assets/img/search-background.jpg");
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 500px;
+      background-size: 100%;
+    }
+}
+
 .menu-block {
   background-color: white;
   padding: 40px;

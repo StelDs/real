@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ApartmentSearchDto} from "../model/search";
+import {ApartmentSearchDto, ApartmentSmartSearchDto} from "../model/search";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,10 @@ export class ApartmentService {
 
   public search(toSearch: ApartmentSearchDto, size: number, page: number): Observable<Object> {
     return this.http.post(`/api/v1/apartments/all?size=${size}&page=${page}`, null);
+  }
+
+  public smartSearch(toSearch: ApartmentSmartSearchDto, size: number, page: number): Observable<Object> {
+    return this.http.post(`/api/v1/apartments/smart-search?size=${size}&page=${page}`, toSearch);
   }
 
   public searchWithPreferences(): Observable<Object> {

@@ -98,6 +98,7 @@ export class HomeComponent implements OnInit {
   }
 
   public search(): void{
+    sessionStorage.setItem('searchType', "search");
     this.router.navigate(['search'],{
       queryParams: {
         text: this.searchText,
