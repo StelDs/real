@@ -11,3 +11,22 @@
 </div>
 
 <span>{{info}}</span>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>apartmentNumber</th>
+    <th>address</th>
+    <th>price</th>
+    <th>test</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let apartment of apartments">
+    <td>{{ apartment.apartmentNumber }}</td>
+    <td>{{ apartment.address }}</td>
+    <td>{{ apartment.price }}</td>
+    <td>{{ splitimg(apartment.picHrefs) }}</td>
+  </tr>
+  </tbody>
+</table>

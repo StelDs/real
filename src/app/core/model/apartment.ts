@@ -12,6 +12,7 @@ export interface ApartmentShortCard {
   squareKitchenLivingRoom: number;
   like: boolean;
   percent: number;
+  picHrefs: string;
 }
 
 export interface PhoneData {
@@ -19,14 +20,16 @@ export interface PhoneData {
   name: string;
 }
 
-export interface ApartmentCardFull {
+export interface ApartmentFullCard {
+  id: string;
   preview: File[];
-  rooms: string;
+  quantityRooms: number;
   square: number;
   residentialComplex: string;
   address: string;
   kitchen: number;
   floor: number;
+  squareKitchen: number;
   deadlineDelivery: string;
   ceiling_height: string;
   parking: string;
@@ -37,4 +40,5 @@ export interface ApartmentCardFull {
   phone: string;
   like: boolean;
   developer: string;
+  picHrefs: string;
 }

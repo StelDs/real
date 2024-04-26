@@ -38,6 +38,14 @@ export class SearchApartmentCardComponent implements OnInit {
     });
   }
 
+  public ifNullPic(pic: string): string {
+    if (pic === null) {
+      return " /assets/tests/t1.png"
+    }
+    return pic.split('\n')[0];
+  }
+
+
   public formatNumber(n: number): string {
     if (n < 0) {
       throw 'must be non-negative: ' + n;

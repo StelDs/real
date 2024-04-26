@@ -21,4 +21,8 @@ export class ApartmentService {
   public searchWithPreferences(): Observable<Object> {
     return this.http.get(``);
   }
+
+  public getApartment(uid: string): Observable<Object> {
+    return this.http.get(`/api/v1/apartments/card/card/${uid}`);
+  }
 }
