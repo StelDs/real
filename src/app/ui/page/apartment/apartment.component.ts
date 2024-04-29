@@ -1,7 +1,7 @@
-import {Component, Inject, Input, OnInit, Renderer2} from '@angular/core';
+import {Component, Inject, Input, NgModule, OnInit, Renderer2} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {PhoneDialogComponent} from "../search/ui/component/phone-dialog/phone-dialog.component";
-import {ApartmentFullCard, ApartmentShortCard} from "../../../core/model/apartment";
+import {ApartmentFullCard} from "../../../core/model/apartment";
 import {ActivatedRoute} from "@angular/router";
 import {ApartmentService} from "../../../core/service/apartment-service";
 import {DOCUMENT} from "@angular/common";
@@ -9,10 +9,12 @@ import {DOCUMENT} from "@angular/common";
 @Component({
   selector: 'app-apartment',
   templateUrl: './apartment.component.html',
-  styleUrls: ['./apartment.component.css']
+  styleUrls: ['./apartment.component.css'],
 })
+
 export class ApartmentComponent implements OnInit {
-  slides = [{img: 'assets/tests/t1.png'}];
+  slides = [];
+
 
   public apartment: ApartmentFullCard = new class implements ApartmentFullCard {
     address: string = "";
@@ -54,38 +56,29 @@ export class ApartmentComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(
       params => {
         this.uid = params['uid']
+        this.slides = params['countPic']
       }
     );
 
     this.apartmentService.getApartment(this.uid).subscribe({
       next: (data: any): void => {
-
-        // this.test();
+        this.correctStyleIndicators();
         this.apartment = data;
 
-        console.log(this.apartment);
-
-
+        this.apartment.pricePerSquare = this.apartment.price / this.apartment.square;
       }
     })
+
     const scr = this.render2.createElement('script');
     scr.type = 'text/javascript';
-    scr.text = 'console.log("test");';
+  //  scr.text = 'console.log("test");';
     this.render2.appendChild(this.document.body, scr);
 
   }
 
-  addSlide() {
-    //  this.slides.push({img: 'assets/tests/t2.png'})
-    this.slides = [{img: 'assets/tests/t2.png'}];
-  }
-
-
-  test() {
+  correctStyleIndicators() {
     const carouselIndicators = document.getElementsByClassName("carousel-indicators ng-star-inserted")[0] as HTMLElement;
     carouselIndicators.style.left = "35%";
-    this.addSlide()
-    // this.slides = [{image:'assets/tests/t2.png'},{image:'assets/tests/t1.png'},{image:'assets/tests/t1.png'}];
   }
 
   public showPhone(): void {
@@ -98,12 +91,26 @@ export class ApartmentComponent implements OnInit {
 
   }
 
-  public showPic(e: MouseEvent): void {
-    this.dialog.open(PhoneDialogComponent, {
-      data: {
-        phone: e.target,
-        name: "this.apartment.name",
-      },
-    });
+  public showPic(imagepath:any): void {
+    window.open(imagepath, "_blank");
+  //  return this.http.get(imagepath);
+  }
+
+  public formatNumber(n: number): string {
+    if (n < 0) {
+      throw 'must be non-negative: ' + n;
+    }
+    if (n === 0) {
+      return '0';
+    }
+
+    let output = [];
+
+    for (; n >= 1000; n = Math.floor(n / 1000)) {
+      output.unshift(String(n % 1000).padStart(3, '0'));
+    }
+    output.unshift(n);
+
+    return output.join(' ');
   }
 }

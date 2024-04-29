@@ -9,29 +9,36 @@
             </div>
 
             <div class="row" style="padding: 10px">
+
+
               <div class="carousel-block" >
-                <mat-carousel
-                  [autoplay]="false"
-                  [interval]="5000"
-                  color="primary"
-                  maxWidth="auto"
-                  [maintainAspectRatio]="false"
-                  [proportion]="75"
-                  [slides]="10"
-                  slideHeight="30rem"
-                  [loop]="true"
-                  [hideArrows]="false"
-                  [hideIndicators]="false"
-                  [useKeyboard]="true"
-                  [useMouseWheel]="false"
-                >
-                  <mat-carousel-slide
-                    #matCarouselSlide
-                    *ngFor="let slide of slides; let i = index"
-                  >
-                    <img [src]="slide.img" (click)="showPic($event)">
+                <mat-carousel [hideIndicators]="false" color="primary" [hideArrows]="false" [proportion]="75" [autoplay]="false">
+                  <mat-carousel-slide  #matCarouselSlide *ngFor="let slide of slides; let i = index" >
+                    <div  [ngStyle]="{'height':'100%','weight':'100%','text-align':'center'}"><img [ngStyle]="{'height':'100%','weight':'100%'}" src="{{apartment.picHrefs.split('\n')[i]}}" (click)="showPic(apartment.picHrefs.split('\n')[i])"></div>
                   </mat-carousel-slide>
                 </mat-carousel>
+<!--                <mat-carousel-->
+<!--                  [autoplay]="false"-->
+<!--                  [interval]="5000"-->
+<!--                  color="primary"-->
+<!--                  maxWidth="auto"-->
+<!--                  [maintainAspectRatio]="false"-->
+<!--                  [proportion]="75"-->
+<!--                  [slides]="10"-->
+<!--                  slideHeight="30rem"-->
+<!--                  [loop]="true"-->
+<!--                  [hideArrows]="false"-->
+<!--                  [hideIndicators]="false"-->
+<!--                  [useKeyboard]="true"-->
+<!--                  [useMouseWheel]="false"-->
+<!--                >-->
+<!--                  <mat-carousel-slide-->
+<!--                    #matCarouselSlide-->
+<!--                    *ngFor="let slide of slides; let i = index"-->
+<!--                  >-->
+<!--                    <img [src]="slide.img" (click)="showPic($event)">-->
+<!--                  </mat-carousel-slide>-->
+<!--                </mat-carousel>-->
                 <!--                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">-->
                 <!--                  <div class="carousel-indicators">-->
                 <!--                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"-->
@@ -67,8 +74,8 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                ЖК «Новый дом»
-                <div class="sub-text">город Воронеж, улица Жилая, 9</div>
+                ЖК «Новый дом» {{apartment.developer}}
+                <div class="sub-text">{{apartment.address}}</div>
               </div>
               <div class="col-md-6">
 
@@ -129,15 +136,15 @@
             </div>
           </div>
           <div class="col-md-3 col-ms-3 price-block">
-            <h2>6 076 000 ₽</h2>
+            <h2> {{formatNumber(apartment.price)}} ₽</h2>
             <div class="sub-text">
-              <p>77 205 ₽/м²</p>
+              <p>{{formatNumber(apartment.pricePerSquare)}} ₽/м²</p>
             </div>
             <div>
               ЖК «Новый дом»
             </div>
             <div class="sub-text">
-              <p>город Воронеж, улица Жилая, 9</p>
+              <p>{{apartment.address}}</p>
             </div>
             <div>
               <p>ГК Звезда</p>
@@ -145,21 +152,17 @@
 
             <div class="row">
               <div class="col-2">
-                <!--                <button mat-icon-button color="warn" *ngIf="apartment.like" (click)="changeLike()">-->
-                <!--                  <mat-icon>favorite</mat-icon>-->
-                <!--                </button>-->
-                <!--                <button mat-icon-button color="black" *ngIf="!apartment.like" (click)="changeLike()">-->
-                <!--                  <mat-icon>favorite</mat-icon>-->
-                <!--                </button>-->
+                <button mat-icon-button color="warn" *ngIf="apartment.like" (click)="changeLike()">
+                  <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button color="black" *ngIf="!apartment.like" (click)="changeLike()">
+                  <mat-icon>favorite</mat-icon>
+                </button>
               </div>
               <div class="col-10">
                 <button mat-raised-button type="submit" (click)="showPhone()"
                         class="mat-raised-button-primary-color phone-button">
                   Показать телефон
-                </button>
-                <button type="submit" (click)="test()"
-                        class="mat-raised-button-primary-color phone-button">
-                  тест
                 </button>
               </div>
             </div>

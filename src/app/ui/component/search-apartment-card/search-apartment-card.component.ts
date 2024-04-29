@@ -45,6 +45,16 @@ export class SearchApartmentCardComponent implements OnInit {
     return pic.split('\n')[0];
   }
 
+  countPic(pic: string): any {
+    let str = pic.split('\n');
+    let cnt = [];
+    let i = 0;
+    for (const strKey in str) {
+      cnt.push(i);
+      i++;
+    }
+    return cnt;
+  }
 
   public formatNumber(n: number): string {
     if (n < 0) {

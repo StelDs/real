@@ -1,32 +1,49 @@
 <input type="file" class="file-input"
        accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
        (change)="onFileSelected($event)" #fileUpload>
-
-<div class="file-upload">
-  {{fileName || "No file uploaded yet."}}
-  <button mat-mini-fab color="primary" class="upload-btn"
-          (click)="fileUpload.click()">
-    <mat-icon>attach_file</mat-icon>
-  </button>
+<div class="container overflow-hidden">
+  <div class="row">
+    <div class="file-upload  m-2 w-50 ">
+      <span class="m-md-3">{{fileName || "Выберите файл для загруки -->"}}</span>
+      <button mat-mini-fab color="primary" class="upload-btn"
+              (click)="fileUpload.click()">
+        <mat-icon>attach_file</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <span class="m-md-3" [innerHTML]="info" ></span>
+  </div>
+  <div class="row">
+  <table class="table table-bordered ">
+    <thead>
+    <tr>
+      <th [ngStyle]="{'width':'2 %'}">#Строка</th>
+      <th>ID</th>
+      <th>Адресс</th>
+      <th>Цена</th>
+      <th [ngStyle]="{'width':'2 %'}">Статус</th>
+      <th [ngStyle]="{'width':'50 %'}">Информация</th>
+      <th>Сылки</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let apartment of apartments; let i= index">
+      <td [ngStyle]="{'width':'2 %'}">{{i + 2}}</td>
+      <td>{{ apartment.externalId}}</td>
+      <td>{{ apartment.address }}</td>
+      <td>{{ apartment.price }}</td>
+      <td [ngStyle]="{'width':'2%'}">{{ apartment.status}}</td>
+      <td [ngStyle]="{'width':'30%'}">{{ apartment.info}}</td>
+      <td #tdpic>
+        <div *ngIf="apartment.picHrefs" [ngStyle]="{'text-align':'center','display':'inline-block'}">
+        <span *ngFor="let href of apartment.picHrefs.split('\n'); let i= index">
+          <img [ngClass]="'img-thumbnail'" [ngStyle]="{'max-width': '20%'}" src="{{href}}">
+        </span>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
 </div>
-
-<span>{{info}}</span>
-
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th>apartmentNumber</th>
-    <th>address</th>
-    <th>price</th>
-    <th>test</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let apartment of apartments">
-    <td>{{ apartment.apartmentNumber }}</td>
-    <td>{{ apartment.address }}</td>
-    <td>{{ apartment.price }}</td>
-    <td>{{ splitimg(apartment.picHrefs) }}</td>
-  </tr>
-  </tbody>
-</table>

@@ -36,7 +36,9 @@
               "src/reboot.css",
               "src/grid.css"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           },
           "configurations": {
             "production": {
