@@ -3,7 +3,7 @@ version: '3.8'
 services:
   front:
     container_name: Front
-    image: stelds/stell-front:1.0
+    image: stelds/stell-front:2.1
     build: .
     ports:
       - "4201:80"
