@@ -32,7 +32,7 @@ export class SearchApartmentCardComponent implements OnInit {
     console.log(this.apartment)
     this.dialog.open(PhoneDialogComponent, {
       data: {
-        phone: "+79999999999",
+        phone: this.apartment.phone,
         name: "Ivan Ivanov"
       },
     });

@@ -37,6 +37,8 @@ export class ApartmentComponent implements OnInit {
     quantityRooms!: number;
     square!: number;
     squareKitchen!: number;
+    company: string = "";
+    numberElevators!: number;
   }
 
   public uid !: string;
@@ -64,7 +66,7 @@ export class ApartmentComponent implements OnInit {
       next: (data: any): void => {
         this.correctStyleIndicators();
         this.apartment = data;
-
+      console.log(data);
         this.apartment.pricePerSquare = this.apartment.price / this.apartment.square;
       }
     })
@@ -84,7 +86,7 @@ export class ApartmentComponent implements OnInit {
   public showPhone(): void {
     this.dialog.open(PhoneDialogComponent, {
       data: {
-        phone: "this.apartment.phone",
+        phone: this.apartment.phone,
         name: "this.apartment.name",
       },
     });

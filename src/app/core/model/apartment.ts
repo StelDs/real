@@ -13,6 +13,7 @@ export interface ApartmentShortCard {
   like: boolean;
   percent: number;
   picHrefs: string;
+  phone: string;
 }
 
 export interface PhoneData {
@@ -41,4 +42,6 @@ export interface ApartmentFullCard {
   like: boolean;
   developer: string;
   picHrefs: string;
+  company: string;
+  numberElevators: number;
 }
